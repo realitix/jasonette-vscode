@@ -1,7 +1,94 @@
 {
+ "Transition one step back from the current view": {
+  "prefix": [
+   "type: $back"
+  ],
+  "body": [
+   "\\$back",
+   "{}"
+  ]
+ },
+ "Close a modal window": {
+  "prefix": [
+   "type: $close"
+  ],
+  "body": [
+   "\\$close",
+   "{}"
+  ]
+ },
+ "Href simple": {
+  "prefix": [
+   "type: $href"
+  ],
+  "body": [
+   "\\$href",
+   "options:",
+   "\turl: JSON url"
+  ]
+ },
+ "Call an action via lambda": {
+  "prefix": [
+   "type: $lambda"
+  ],
+  "body": [
+   "\\$lambda",
+   "options:",
+   "\tname: Action name",
+   "\toptions:",
+   "\t\tparameter: My parameter"
+  ]
+ },
+ "Similar to back with a return value": {
+  "prefix": [
+   "type: $ok"
+  ],
+  "body": [
+   "\\$ok",
+   "options:",
+   "\tparameter: value"
+  ]
+ },
+ "Reload completely the view": {
+  "prefix": [
+   "type: $reload"
+  ],
+  "body": [
+   "\\$reload",
+   "{}"
+  ]
+ },
+ "Render the template": {
+  "prefix": [
+   "type: $render"
+  ],
+  "body": [
+   "\\$render",
+   "{}"
+  ]
+ },
+ "Scroll top or bottom": {
+  "prefix": [
+   "type: $scroll"
+  ],
+  "body": [
+   "\\$scroll",
+   "options:",
+   "\tposition: top | bottom"
+  ]
+ },
+ "Take a screenshot": {
+  "prefix": [
+   "type: $snapshot"
+  ],
+  "body": [
+   "\\$snapshot",
+   "{}"
+  ]
+ },
  "Open an alert box": {
   "prefix": [
-   "$util.alert"
+   "type: $util.alert"
   ],
   "body": [
    "\\$util.alert",
@@ -11,7 +98,7 @@
  },
  "Open an alert box with form": {
   "prefix": [
-   "$util.alert"
+   "type: $util.alert"
   ],
   "body": [
    "\\$util.alert",
@@ -28,7 +115,7 @@
  },
  "Open a toast": {
   "prefix": [
-   "$util.toast"
+   "type: $util.toast"
   ],
   "body": [
    "\\$util.toast",

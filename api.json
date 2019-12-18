@@ -1,24 +1,63 @@
 {
     "actions": {
-        "$util.alert": [
-            {
-                "api_description": "Open an alert box",
+        "$back": [{
+            "api_description": "Transition one step back from the current view"
+        }],
+        "$close": [{
+            "api_description": "Close a modal window"
+        }],
+        "$href": [{
+            "api_description": "Href simple",
+            "options": {
+                "url": "JSON url"
+            }
+        }],
+        "$lambda": [{
+            "api_description": "Call an action via lambda",
+            "options": {
+                "name": "Action name",
                 "options": {
-                    "title": "My title"
-                }
-            },
-            {
-                "api_description": "Open an alert box with form",
-                "options": {
-                    "title": "My title",
-                    "form": true,
-                    "momo": {
-                        "mama": "1",
-                        "pipi": ["1", "2", "3"]
-                    }
+                    "parameter": "My parameter"
                 }
             }
-        ],
+        }],
+        "$ok": [{
+            "api_description": "Similar to back with a return value",
+            "options": {
+                "parameter": "value"
+            }
+        }],
+        "$reload": [{
+            "api_description": "Reload completely the view"
+        }],
+        "$render": [{
+            "api_description": "Render the template"
+        }],
+        "$scroll": [{
+            "api_description": "Scroll top or bottom",
+            "options": {
+                "position": "top | bottom"
+            }
+        }],
+        "$snapshot": [{
+            "api_description": "Take a screenshot"
+        }],
+        "$util.alert": [{
+            "api_description": "Open an alert box",
+            "options": {
+                "title": "My title"
+            }
+        }, {
+            "api_description": "Open an alert box with form",
+            "options": {
+                "title": "My title",
+                "form": true,
+                "momo": {
+                    "mama": "1",
+                    "pipi": ["1", "2", "3"]
+                }
+            }
+        }],
         "$util.toast": [{
             "api_description": "Open a toast",
             "options": {
