@@ -1,0 +1,29 @@
+{
+    "Open an alert box": {
+        "prefix": ["$util.alert"],
+        "body": [
+            "\\$util.alert",
+            "options:",
+            "\ttitle: My Title"
+        ]
+    },
+    "Open an alert box with form": {
+        "prefix": ["$util.alert"],
+        "body": [
+            "\\$util.alert",
+            "options:",
+            "\ttitle: My Title",
+            "\tform: true"
+        ]
+    },
+    "Open a toast": {
+        "prefix": ["$util.toast"],
+        "body": [
+            "\\$util.toast",
+            "options:",
+              "\ttext: My text",
+              "\ttype: error | info | warning | dark | default | success (default)"
+          ],
+        "description": "Open a text box"
+    }
+}

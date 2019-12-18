@@ -1,0 +1,30 @@
+{
+    "actions": {
+        "$util.alert": [
+            {
+                "api_description": "Open an alert box",
+                "options": {
+                    "title": "My title"
+                }
+            },
+            {
+                "api_description": "Open an alert box with form",
+                "options": {
+                    "title": "My title",
+                    "form": true,
+                    "momo": {
+                        "mama": "1",
+                        "pipi": ["1", "2", "3"]
+                    }
+                }
+            }
+        ],
+        "$util.toast": [{
+            "api_description": "Open a toast",
+            "options": {
+                "text": "My text",
+                "type": "error | info | warning | dark | default | success (default)"
+            }
+        }]
+    }
+}

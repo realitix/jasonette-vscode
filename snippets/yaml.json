@@ -1,0 +1,40 @@
+{
+ "Open an alert box": {
+  "prefix": [
+   "$util.alert"
+  ],
+  "body": [
+   "\\$util.alert",
+   "options:",
+   "\ttitle: My title"
+  ]
+ },
+ "Open an alert box with form": {
+  "prefix": [
+   "$util.alert"
+  ],
+  "body": [
+   "\\$util.alert",
+   "options:",
+   "\tform: true",
+   "\tmomo:",
+   "\t\tmama: '1'",
+   "\t\tpipi:",
+   "\t\t- '1'",
+   "\t\t- '2'",
+   "\t\t- '3'",
+   "\ttitle: My title"
+  ]
+ },
+ "Open a toast": {
+  "prefix": [
+   "$util.toast"
+  ],
+  "body": [
+   "\\$util.toast",
+   "options:",
+   "\ttext: My text",
+   "\ttype: error | info | warning | dark | default | success (default)"
+  ]
+ }
+}
