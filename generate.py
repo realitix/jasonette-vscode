@@ -22,7 +22,7 @@ def main():
         for example in examples:
             a = action_name.replace("$", "\\$")
             model[example['api_description']] = {
-                'prefix': ["type: "+action_name],
+                'prefix': [action_name],
                 'body': [a] + json_to_yaml_indent(example)
             }
     

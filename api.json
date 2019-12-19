@@ -1,10 +1,89 @@
 {
     "actions": {
+        "$audio.duration": [{
+            "api_description": "Get duration of audio",
+            "options": {
+                "url": "Audio url"
+            }
+        }],
+        "$audio.pause": [{
+            "api_description": "Pause an already playing audio",
+            "options": {
+                "url": "Audio to pause (pause all audios if no url)"
+            }
+        }],
+        "$audio.play": [{
+            "api_description": "Play an audio file",
+            "options": {
+                "url": "file:// | http://",
+                "title": "Title to display on lock screen",
+                "author": "Author name",
+                "album": "Album name",
+                "image": "Album picture"
+            }
+        }],
+        "$audio.position": [{
+            "api_description": "Get the position of an audio",
+            "options": {
+                "url": "Audio url"
+            }
+        }],
+        "$audio.record": [{
+            "api_description": "Record an audio",
+            "options": {
+                "color": "Tint color when active",
+                "color:disabled": "Tint color when paused",
+                "theme": "light / To use light theme, otherwise omit"
+            }
+        }],
+        "$audio.seek": [{
+            "api_description": "Seek an already playing audio",
+            "options": {
+                "url": "Audio to seek",
+                "position": "Value between 0 and 1"
+            }
+        }],
+        "$audio.stop": [{
+            "api_description": "Stop an already playing audio",
+            "options": {
+                "url": "Audio to stop (pause all audios if no url)"
+            }
+        }],
         "$back": [{
             "api_description": "Transition one step back from the current view"
         }],
+        "$cache.set": [{
+            "api_description": "Set local cache variable",
+            "options": {
+                "variable": "value"
+            }
+        }],
         "$close": [{
             "api_description": "Close a modal window"
+        }],
+        "$convert.csv": [{
+            "api_description": "Convert CSV to JSON",
+            "options": {
+                "data": "CSV String"
+            }
+        }],
+        "$convert.rss": [{
+            "api_description": "Convert RSS to JSON",
+            "options": {
+                "data": "RSS String"
+            }
+        }],
+        "$geo.get": [{
+            "api_description": "Get user geolocation",
+            "options": {
+                "distance": "Accuracy in meters (default 5000)"
+            }
+        }],
+        "$global.set": [{
+            "api_description": "Set global variable",
+            "options": {
+                "variable": "value"
+            }
         }],
         "$href": [{
             "api_description": "Href simple",
@@ -21,6 +100,72 @@
                 }
             }
         }],
+        "$media.camera": [{
+            "api_description": "Capture photo or video",
+            "options": {
+                "type": "photo | video",
+                "edit": "true | false (default)",
+                "quality": "high | medium (default) | low"
+            }
+        }],
+        "$media.picker": [{
+            "api_description": "Pick a photo in the gallery",
+            "options": {
+                "type": "photo | video",
+                "edit": "true | false (default)",
+                "quality": "high | medium (default) | low"
+            }
+        }],
+        "$media.play": [{
+            "api_description": "Play a video",
+            "options": {
+                "url": "file://video.mp4 | http://video.mp4",
+                "muted": "true | false (default)"
+            }
+        }],
+        "$network.request": [{
+            "api_description": "Request full",
+            "options": {
+                "url": "URL to access",
+                "method": "get | post | put | delete | head | patch",
+                "data": {
+                    "parameter": "value"
+                },
+                "header": {
+                    "auth_token": "value"
+                },
+                "timeout": "Request timeout in seconds",
+                "data_type": "json | html | rss | raw",
+                "content_type": "default: form object | json"
+            }
+        }, {
+            "api_description": "GET JSON",
+            "options": {
+                "url": "URL to access",
+                "method": "get",
+                "data_type": "json"
+            }
+        }, {
+            "api_description": "POST JSON",
+            "options": {
+                "url": "URL to access",
+                "method": "post",
+                "data_type": "json",
+                "content_type": "json",
+                "data": {
+                    "parameter": "value"
+                }
+            }
+        }],
+        "$network.upload": [{
+            "api_description": "Upload file",
+            "options": {
+                "type": "s3",
+                "bucket": "bucket name",
+                "path": "s3 path",
+                "sign_url": "s3 signed url"
+            }
+        }],
         "$ok": [{
             "api_description": "Similar to back with a return value",
             "options": {
@@ -33,29 +178,125 @@
         "$render": [{
             "api_description": "Render the template"
         }],
+        "$sript.clear": [{
+            "api_description": "Clear global context of Javascript search engine"
+        }],
+        "$script.include": [{
+            "api_description": "Include javascript file",
+            "options": {
+                "items": [
+                  { "url": "http://example.com/test.js" },
+                  { "url": "file://test.js" },
+                  { "text": "var test = function() { return 'ok' }" }
+                ]
+            }
+        }],
         "$scroll": [{
             "api_description": "Scroll top or bottom",
             "options": {
                 "position": "top | bottom"
             }
         }],
+        "$session.reset": [{
+            "api_description": "Reset sessions",
+            "options": {
+                "domain": "example.com"
+            }
+        }],
+        "$session.set": [{
+            "api_description": "Set session variable",
+            "options": {
+                "domain": "example.com",
+                "header": {
+                    "X-User-Email": "Email"
+                },
+                "body": "Object to pass to all future post requests"
+            }
+        }],
+        "$set": [{
+            "api_description": "Set variable",
+            "options": {
+                "variable": "value" 
+            }
+        }],
         "$snapshot": [{
             "api_description": "Take a screenshot"
+        }],
+        "$timer.start": [{
+            "api_description": "Start a timer",
+            "options": {
+                "interval": "timer interval in seconds",
+                "name": "Name of the timer (used to stop it)",
+                "repeats": "true to repeat perpetually",
+                "action": "Action to execute on every timer interval"
+            }
+        }],
+        "$timer.stop": [{
+            "api_description": "Stop a timer",
+            "options": {
+                "name": "Name of the timer"
+            }
+        }],
+        "$util.addressbook": [{
+            "api_description": "Return an array of contact [{'name': '', 'phone': '', 'email': ''}]"
         }],
         "$util.alert": [{
             "api_description": "Open an alert box",
             "options": {
-                "title": "My title"
+                "title": "My title",
+                "description": "Alert description"
             }
         }, {
             "api_description": "Open an alert box with form",
             "options": {
                 "title": "My title",
-                "form": true,
-                "momo": {
-                    "mama": "1",
-                    "pipi": ["1", "2", "3"]
-                }
+                "description": "Alert description",
+                "form": [{
+                    "name": "username",
+                    "placeholder": "Enter username"
+                }, {
+                    "name": "password",
+                    "placeholder": "Enter password",
+                    "secure": true
+                }]
+            }
+        }],
+        "$util.banner": [{
+            "api_description": "Open a banner on top of the screen",
+            "options": {
+                "title": "My title",
+                "description": "Banner description",
+                "type": "error | success | info (default)"
+            }
+        }],
+        "$util.datepicker": [{
+            "api_description": "Open a date picker",
+            "options": {
+                "title": "Title description",
+                "description": "Datepicker description"
+            }
+        }],
+        "$util.picker": [{
+            "api_description": "Open a multiple choice picker menu",
+            "options": {
+                "title": "My title",
+                "items": [{
+                    "text": "Item text",
+                    "href": "HREF to trigger (optional)",
+                    "action": "Action to trigger"
+                }]
+            }
+        }],
+        "$util.share": [{
+            "api_description": "Share items",
+            "options": {
+                "items": [{
+                    "type": "text | image | video",
+                    "text": "Text to share / text only",
+                    "data": "Raw data / image only",
+                    "url": "Image url / image only",
+                    "file_url": "Video url / video only"
+                }]
             }
         }],
         "$util.toast": [{
@@ -64,6 +305,9 @@
                 "text": "My text",
                 "type": "error | info | warning | dark | default | success (default)"
             }
+        }],
+        "$vision.scan": [{
+            "api_description": "Scan QR code"
         }]
     }
 }

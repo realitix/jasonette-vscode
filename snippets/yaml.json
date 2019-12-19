@@ -1,25 +1,152 @@
 {
+ "Get duration of audio": {
+  "prefix": [
+   "$audio.duration"
+  ],
+  "body": [
+   "\\$audio.duration",
+   "options:",
+   "\turl: Audio url"
+  ]
+ },
+ "Pause an already playing audio": {
+  "prefix": [
+   "$audio.pause"
+  ],
+  "body": [
+   "\\$audio.pause",
+   "options:",
+   "\turl: Audio to pause (pause all audios if no url)"
+  ]
+ },
+ "Play an audio file": {
+  "prefix": [
+   "$audio.play"
+  ],
+  "body": [
+   "\\$audio.play",
+   "options:",
+   "\talbum: Album name",
+   "\tauthor: Author name",
+   "\timage: Album picture",
+   "\ttitle: Title to display on lock screen",
+   "\turl: file:// | http://"
+  ]
+ },
+ "Get the position of an audio": {
+  "prefix": [
+   "$audio.position"
+  ],
+  "body": [
+   "\\$audio.position",
+   "options:",
+   "\turl: Audio url"
+  ]
+ },
+ "Record an audio": {
+  "prefix": [
+   "$audio.record"
+  ],
+  "body": [
+   "\\$audio.record",
+   "options:",
+   "\tcolor: Tint color when active",
+   "\tcolor:disabled: Tint color when paused",
+   "\ttheme: light / To use light theme, otherwise omit"
+  ]
+ },
+ "Seek an already playing audio": {
+  "prefix": [
+   "$audio.seek"
+  ],
+  "body": [
+   "\\$audio.seek",
+   "options:",
+   "\tposition: Value between 0 and 1",
+   "\turl: Audio to seek"
+  ]
+ },
+ "Stop an already playing audio": {
+  "prefix": [
+   "$audio.stop"
+  ],
+  "body": [
+   "\\$audio.stop",
+   "options:",
+   "\turl: Audio to stop (pause all audios if no url)"
+  ]
+ },
  "Transition one step back from the current view": {
   "prefix": [
-   "type: $back"
+   "$back"
   ],
   "body": [
    "\\$back",
    "{}"
   ]
  },
+ "Set local cache variable": {
+  "prefix": [
+   "$cache.set"
+  ],
+  "body": [
+   "\\$cache.set",
+   "options:",
+   "\tvariable: value"
+  ]
+ },
  "Close a modal window": {
   "prefix": [
-   "type: $close"
+   "$close"
   ],
   "body": [
    "\\$close",
    "{}"
   ]
  },
+ "Convert CSV to JSON": {
+  "prefix": [
+   "$convert.csv"
+  ],
+  "body": [
+   "\\$convert.csv",
+   "options:",
+   "\tdata: CSV String"
+  ]
+ },
+ "Convert RSS to JSON": {
+  "prefix": [
+   "$convert.rss"
+  ],
+  "body": [
+   "\\$convert.rss",
+   "options:",
+   "\tdata: RSS String"
+  ]
+ },
+ "Get user geolocation": {
+  "prefix": [
+   "$geo.get"
+  ],
+  "body": [
+   "\\$geo.get",
+   "options:",
+   "\tdistance: Accuracy in meters (default 5000)"
+  ]
+ },
+ "Set global variable": {
+  "prefix": [
+   "$global.set"
+  ],
+  "body": [
+   "\\$global.set",
+   "options:",
+   "\tvariable: value"
+  ]
+ },
  "Href simple": {
   "prefix": [
-   "type: $href"
+   "$href"
   ],
   "body": [
    "\\$href",
@@ -29,7 +156,7 @@
  },
  "Call an action via lambda": {
   "prefix": [
-   "type: $lambda"
+   "$lambda"
   ],
   "body": [
    "\\$lambda",
@@ -39,9 +166,102 @@
    "\t\tparameter: My parameter"
   ]
  },
+ "Capture photo or video": {
+  "prefix": [
+   "$media.camera"
+  ],
+  "body": [
+   "\\$media.camera",
+   "options:",
+   "\tedit: true | false (default)",
+   "\tquality: high | medium (default) | low",
+   "\ttype: photo | video"
+  ]
+ },
+ "Pick a photo in the gallery": {
+  "prefix": [
+   "$media.picker"
+  ],
+  "body": [
+   "\\$media.picker",
+   "options:",
+   "\tedit: true | false (default)",
+   "\tquality: high | medium (default) | low",
+   "\ttype: photo | video"
+  ]
+ },
+ "Play a video": {
+  "prefix": [
+   "$media.play"
+  ],
+  "body": [
+   "\\$media.play",
+   "options:",
+   "\tmuted: true | false (default)",
+   "\turl: file://video.mp4 | http://video.mp4"
+  ]
+ },
+ "Request full": {
+  "prefix": [
+   "$network.request"
+  ],
+  "body": [
+   "\\$network.request",
+   "options:",
+   "\tcontent_type: 'default: form object | json'",
+   "\tdata:",
+   "\t\tparameter: value",
+   "\tdata_type: json | html | rss | raw",
+   "\theader:",
+   "\t\tauth_token: value",
+   "\tmethod: get | post | put | delete | head | patch",
+   "\ttimeout: Request timeout in seconds",
+   "\turl: URL to access"
+  ]
+ },
+ "GET JSON": {
+  "prefix": [
+   "$network.request"
+  ],
+  "body": [
+   "\\$network.request",
+   "options:",
+   "\tdata_type: json",
+   "\tmethod: get",
+   "\turl: URL to access"
+  ]
+ },
+ "POST JSON": {
+  "prefix": [
+   "$network.request"
+  ],
+  "body": [
+   "\\$network.request",
+   "options:",
+   "\tcontent_type: json",
+   "\tdata:",
+   "\t\tparameter: value",
+   "\tdata_type: json",
+   "\tmethod: post",
+   "\turl: URL to access"
+  ]
+ },
+ "Upload file": {
+  "prefix": [
+   "$network.upload"
+  ],
+  "body": [
+   "\\$network.upload",
+   "options:",
+   "\tbucket: bucket name",
+   "\tpath: s3 path",
+   "\tsign_url: s3 signed url",
+   "\ttype: s3"
+  ]
+ },
  "Similar to back with a return value": {
   "prefix": [
-   "type: $ok"
+   "$ok"
   ],
   "body": [
    "\\$ok",
@@ -51,7 +271,7 @@
  },
  "Reload completely the view": {
   "prefix": [
-   "type: $reload"
+   "$reload"
   ],
   "body": [
    "\\$reload",
@@ -60,16 +280,38 @@
  },
  "Render the template": {
   "prefix": [
-   "type: $render"
+   "$render"
   ],
   "body": [
    "\\$render",
    "{}"
   ]
  },
+ "Clear global context of Javascript search engine": {
+  "prefix": [
+   "$sript.clear"
+  ],
+  "body": [
+   "\\$sript.clear",
+   "{}"
+  ]
+ },
+ "Include javascript file": {
+  "prefix": [
+   "$script.include"
+  ],
+  "body": [
+   "\\$script.include",
+   "options:",
+   "\titems:",
+   "\t-   url: http://example.com/test.js",
+   "\t-   url: file://test.js",
+   "\t-   text: var test = function() { return 'ok' }"
+  ]
+ },
  "Scroll top or bottom": {
   "prefix": [
-   "type: $scroll"
+   "$scroll"
   ],
   "body": [
    "\\$scroll",
@@ -77,51 +319,178 @@
    "\tposition: top | bottom"
   ]
  },
+ "Reset sessions": {
+  "prefix": [
+   "$session.reset"
+  ],
+  "body": [
+   "\\$session.reset",
+   "options:",
+   "\tdomain: example.com"
+  ]
+ },
+ "Set session variable": {
+  "prefix": [
+   "$session.set"
+  ],
+  "body": [
+   "\\$session.set",
+   "options:",
+   "\tbody: Object to pass to all future post requests",
+   "\tdomain: example.com",
+   "\theader:",
+   "\t\tX-User-Email: Email"
+  ]
+ },
+ "Set variable": {
+  "prefix": [
+   "$set"
+  ],
+  "body": [
+   "\\$set",
+   "options:",
+   "\tvariable: value"
+  ]
+ },
  "Take a screenshot": {
   "prefix": [
-   "type: $snapshot"
+   "$snapshot"
   ],
   "body": [
    "\\$snapshot",
    "{}"
   ]
  },
+ "Start a timer": {
+  "prefix": [
+   "$timer.start"
+  ],
+  "body": [
+   "\\$timer.start",
+   "options:",
+   "\taction: Action to execute on every timer interval",
+   "\tinterval: timer interval in seconds",
+   "\tname: Name of the timer (used to stop it)",
+   "\trepeats: true to repeat perpetually"
+  ]
+ },
+ "Stop a timer": {
+  "prefix": [
+   "$timer.stop"
+  ],
+  "body": [
+   "\\$timer.stop",
+   "options:",
+   "\tname: Name of the timer"
+  ]
+ },
+ "Return an array of contact [{'name': '', 'phone': '', 'email': ''}]": {
+  "prefix": [
+   "$util.addressbook"
+  ],
+  "body": [
+   "\\$util.addressbook",
+   "{}"
+  ]
+ },
  "Open an alert box": {
   "prefix": [
-   "type: $util.alert"
+   "$util.alert"
   ],
   "body": [
    "\\$util.alert",
    "options:",
+   "\tdescription: Alert description",
    "\ttitle: My title"
   ]
  },
  "Open an alert box with form": {
   "prefix": [
-   "type: $util.alert"
+   "$util.alert"
   ],
   "body": [
    "\\$util.alert",
    "options:",
-   "\tform: true",
-   "\tmomo:",
-   "\t\tmama: '1'",
-   "\t\tpipi:",
-   "\t\t- '1'",
-   "\t\t- '2'",
-   "\t\t- '3'",
+   "\tdescription: Alert description",
+   "\tform:",
+   "\t-   name: username",
+   "\t\tplaceholder: Enter username",
+   "\t-   name: password",
+   "\t\tplaceholder: Enter password",
+   "\t\tsecure: true",
    "\ttitle: My title"
+  ]
+ },
+ "Open a banner on top of the screen": {
+  "prefix": [
+   "$util.banner"
+  ],
+  "body": [
+   "\\$util.banner",
+   "options:",
+   "\tdescription: Banner description",
+   "\ttitle: My title",
+   "\ttype: error | success | info (default)"
+  ]
+ },
+ "Open a date picker": {
+  "prefix": [
+   "$util.datepicker"
+  ],
+  "body": [
+   "\\$util.datepicker",
+   "options:",
+   "\tdescription: Datepicker description",
+   "\ttitle: Title description"
+  ]
+ },
+ "Open a multiple choice picker menu": {
+  "prefix": [
+   "$util.picker"
+  ],
+  "body": [
+   "\\$util.picker",
+   "options:",
+   "\titems:",
+   "\t-   action: Action to trigger",
+   "\t\thref: HREF to trigger (optional)",
+   "\t\ttext: Item text",
+   "\ttitle: My title"
+  ]
+ },
+ "Share items": {
+  "prefix": [
+   "$util.share"
+  ],
+  "body": [
+   "\\$util.share",
+   "options:",
+   "\titems:",
+   "\t-   data: Raw data / image only",
+   "\t\tfile_url: Video url / video only",
+   "\t\ttext: Text to share / text only",
+   "\t\ttype: text | image | video",
+   "\t\turl: Image url / image only"
   ]
  },
  "Open a toast": {
   "prefix": [
-   "type: $util.toast"
+   "$util.toast"
   ],
   "body": [
    "\\$util.toast",
    "options:",
    "\ttext: My text",
    "\ttype: error | info | warning | dark | default | success (default)"
+  ]
+ },
+ "Scan QR code": {
+  "prefix": [
+   "$vision.scan"
+  ],
+  "body": [
+   "\\$vision.scan",
+   "{}"
   ]
  }
 }
