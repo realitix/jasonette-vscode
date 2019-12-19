@@ -6,8 +6,13 @@ import yaml
 
 def json_to_yaml_indent(example):
     example = {k:v for k,v in example.items() if not k == 'api_description'}
+    
+    if "success" not in example and "error" not in example:
+        example["success"] = {"type": "$"}
+        example["error"] = {"type": "$"}
+
     indent_size = 4
-    yaml_out = yaml.dump(example, indent=indent_size).rstrip()
+    yaml_out = yaml.dump(example, indent=indent_size, sort_keys=False).rstrip()
     yaml_out = yaml_out.replace(' ' * indent_size, '\t')
     lines = yaml_out.split("\n")
     return lines

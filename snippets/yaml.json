@@ -6,7 +6,11 @@
   "body": [
    "\\$audio.duration",
    "options:",
-   "\turl: Audio url"
+   "\turl: Audio url",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Pause an already playing audio": {
@@ -16,7 +20,11 @@
   "body": [
    "\\$audio.pause",
    "options:",
-   "\turl: Audio to pause (pause all audios if no url)"
+   "\turl: Audio to pause (pause all audios if no url)",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Play an audio file": {
@@ -26,11 +34,15 @@
   "body": [
    "\\$audio.play",
    "options:",
-   "\talbum: Album name",
-   "\tauthor: Author name",
-   "\timage: Album picture",
+   "\turl: file:// | http://",
    "\ttitle: Title to display on lock screen",
-   "\turl: file:// | http://"
+   "\tauthor: Author name",
+   "\talbum: Album name",
+   "\timage: Album picture",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Get the position of an audio": {
@@ -40,7 +52,11 @@
   "body": [
    "\\$audio.position",
    "options:",
-   "\turl: Audio url"
+   "\turl: Audio url",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Record an audio": {
@@ -52,7 +68,11 @@
    "options:",
    "\tcolor: Tint color when active",
    "\tcolor:disabled: Tint color when paused",
-   "\ttheme: light / To use light theme, otherwise omit"
+   "\ttheme: light / To use light theme, otherwise omit",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Seek an already playing audio": {
@@ -62,8 +82,12 @@
   "body": [
    "\\$audio.seek",
    "options:",
+   "\turl: Audio to seek",
    "\tposition: Value between 0 and 1",
-   "\turl: Audio to seek"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Stop an already playing audio": {
@@ -73,7 +97,11 @@
   "body": [
    "\\$audio.stop",
    "options:",
-   "\turl: Audio to stop (pause all audios if no url)"
+   "\turl: Audio to stop (pause all audios if no url)",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Transition one step back from the current view": {
@@ -82,7 +110,10 @@
   ],
   "body": [
    "\\$back",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Set local cache variable": {
@@ -92,7 +123,11 @@
   "body": [
    "\\$cache.set",
    "options:",
-   "\tvariable: value"
+   "\tvariable: value",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Close a modal window": {
@@ -101,7 +136,10 @@
   ],
   "body": [
    "\\$close",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Convert CSV to JSON": {
@@ -111,7 +149,11 @@
   "body": [
    "\\$convert.csv",
    "options:",
-   "\tdata: CSV String"
+   "\tdata: CSV String",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Convert RSS to JSON": {
@@ -121,7 +163,11 @@
   "body": [
    "\\$convert.rss",
    "options:",
-   "\tdata: RSS String"
+   "\tdata: RSS String",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Get user geolocation": {
@@ -131,7 +177,11 @@
   "body": [
    "\\$geo.get",
    "options:",
-   "\tdistance: Accuracy in meters (default 5000)"
+   "\tdistance: Accuracy in meters (default 5000)",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Set global variable": {
@@ -141,7 +191,11 @@
   "body": [
    "\\$global.set",
    "options:",
-   "\tvariable: value"
+   "\tvariable: value",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Href simple": {
@@ -151,7 +205,11 @@
   "body": [
    "\\$href",
    "options:",
-   "\turl: JSON url"
+   "\turl: JSON url",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Call an action via lambda": {
@@ -163,7 +221,53 @@
    "options:",
    "\tname: Action name",
    "\toptions:",
-   "\t\tparameter: My parameter"
+   "\t\tparameter: My parameter",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
+  ]
+ },
+ "Log debug": {
+  "prefix": [
+   "$log.debug"
+  ],
+  "body": [
+   "\\$log.debug",
+   "options:",
+   "\ttext: '{{$root}}'",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
+  ]
+ },
+ "Log error": {
+  "prefix": [
+   "$log.error"
+  ],
+  "body": [
+   "\\$log.error",
+   "options:",
+   "\ttext: '{{$root}}'",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
+  ]
+ },
+ "Log info": {
+  "prefix": [
+   "$log.info"
+  ],
+  "body": [
+   "\\$log.info",
+   "options:",
+   "\ttext: '{{$root}}'",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Capture photo or video": {
@@ -173,9 +277,13 @@
   "body": [
    "\\$media.camera",
    "options:",
+   "\ttype: photo | video",
    "\tedit: true | false (default)",
    "\tquality: high | medium (default) | low",
-   "\ttype: photo | video"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Pick a photo in the gallery": {
@@ -185,9 +293,13 @@
   "body": [
    "\\$media.picker",
    "options:",
+   "\ttype: photo | video",
    "\tedit: true | false (default)",
    "\tquality: high | medium (default) | low",
-   "\ttype: photo | video"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Play a video": {
@@ -197,8 +309,12 @@
   "body": [
    "\\$media.play",
    "options:",
+   "\turl: file://video.mp4 | http://video.mp4",
    "\tmuted: true | false (default)",
-   "\turl: file://video.mp4 | http://video.mp4"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Request full": {
@@ -208,15 +324,19 @@
   "body": [
    "\\$network.request",
    "options:",
-   "\tcontent_type: 'default: form object | json'",
+   "\turl: URL to access",
+   "\tmethod: get | post | put | delete | head | patch",
    "\tdata:",
    "\t\tparameter: value",
-   "\tdata_type: json | html | rss | raw",
    "\theader:",
    "\t\tauth_token: value",
-   "\tmethod: get | post | put | delete | head | patch",
    "\ttimeout: Request timeout in seconds",
-   "\turl: URL to access"
+   "\tdata_type: json | html | rss | raw",
+   "\tcontent_type: 'default: form object | json'",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "GET JSON": {
@@ -226,9 +346,13 @@
   "body": [
    "\\$network.request",
    "options:",
-   "\tdata_type: json",
+   "\turl: URL to access",
    "\tmethod: get",
-   "\turl: URL to access"
+   "\tdata_type: json",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "POST JSON": {
@@ -238,12 +362,16 @@
   "body": [
    "\\$network.request",
    "options:",
+   "\turl: URL to access",
+   "\tmethod: post",
+   "\tdata_type: json",
    "\tcontent_type: json",
    "\tdata:",
    "\t\tparameter: value",
-   "\tdata_type: json",
-   "\tmethod: post",
-   "\turl: URL to access"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Upload file": {
@@ -253,10 +381,14 @@
   "body": [
    "\\$network.upload",
    "options:",
+   "\ttype: s3",
    "\tbucket: bucket name",
    "\tpath: s3 path",
    "\tsign_url: s3 signed url",
-   "\ttype: s3"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Similar to back with a return value": {
@@ -266,7 +398,11 @@
   "body": [
    "\\$ok",
    "options:",
-   "\tparameter: value"
+   "\tparameter: value",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Reload completely the view": {
@@ -275,7 +411,10 @@
   ],
   "body": [
    "\\$reload",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Render the template": {
@@ -284,7 +423,10 @@
   ],
   "body": [
    "\\$render",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Clear global context of Javascript search engine": {
@@ -293,7 +435,10 @@
   ],
   "body": [
    "\\$sript.clear",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Include javascript file": {
@@ -306,7 +451,11 @@
    "\titems:",
    "\t-   url: http://example.com/test.js",
    "\t-   url: file://test.js",
-   "\t-   text: var test = function() { return 'ok' }"
+   "\t-   text: var test = function() { return 'ok' }",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Scroll top or bottom": {
@@ -316,7 +465,11 @@
   "body": [
    "\\$scroll",
    "options:",
-   "\tposition: top | bottom"
+   "\tposition: top | bottom",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Reset sessions": {
@@ -326,7 +479,11 @@
   "body": [
    "\\$session.reset",
    "options:",
-   "\tdomain: example.com"
+   "\tdomain: example.com",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Set session variable": {
@@ -336,10 +493,14 @@
   "body": [
    "\\$session.set",
    "options:",
-   "\tbody: Object to pass to all future post requests",
    "\tdomain: example.com",
    "\theader:",
-   "\t\tX-User-Email: Email"
+   "\t\tX-User-Email: Email",
+   "\tbody: Object to pass to all future post requests",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Set variable": {
@@ -349,7 +510,11 @@
   "body": [
    "\\$set",
    "options:",
-   "\tvariable: value"
+   "\tvariable: value",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Take a screenshot": {
@@ -358,7 +523,10 @@
   ],
   "body": [
    "\\$snapshot",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Start a timer": {
@@ -368,10 +536,14 @@
   "body": [
    "\\$timer.start",
    "options:",
-   "\taction: Action to execute on every timer interval",
    "\tinterval: timer interval in seconds",
    "\tname: Name of the timer (used to stop it)",
-   "\trepeats: true to repeat perpetually"
+   "\trepeats: true to repeat perpetually",
+   "\taction: Action to execute on every timer interval",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Stop a timer": {
@@ -381,7 +553,11 @@
   "body": [
    "\\$timer.stop",
    "options:",
-   "\tname: Name of the timer"
+   "\tname: Name of the timer",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Return an array of contact [{'name': '', 'phone': '', 'email': ''}]": {
@@ -390,7 +566,10 @@
   ],
   "body": [
    "\\$util.addressbook",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open an alert box": {
@@ -400,8 +579,12 @@
   "body": [
    "\\$util.alert",
    "options:",
+   "\ttitle: My title",
    "\tdescription: Alert description",
-   "\ttitle: My title"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open an alert box with form": {
@@ -411,6 +594,7 @@
   "body": [
    "\\$util.alert",
    "options:",
+   "\ttitle: My title",
    "\tdescription: Alert description",
    "\tform:",
    "\t-   name: username",
@@ -418,7 +602,10 @@
    "\t-   name: password",
    "\t\tplaceholder: Enter password",
    "\t\tsecure: true",
-   "\ttitle: My title"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open a banner on top of the screen": {
@@ -428,9 +615,13 @@
   "body": [
    "\\$util.banner",
    "options:",
-   "\tdescription: Banner description",
    "\ttitle: My title",
-   "\ttype: error | success | info (default)"
+   "\tdescription: Banner description",
+   "\ttype: error | success | info (default)",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open a date picker": {
@@ -440,8 +631,12 @@
   "body": [
    "\\$util.datepicker",
    "options:",
+   "\ttitle: Title description",
    "\tdescription: Datepicker description",
-   "\ttitle: Title description"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open a multiple choice picker menu": {
@@ -451,11 +646,15 @@
   "body": [
    "\\$util.picker",
    "options:",
+   "\ttitle: My title",
    "\titems:",
-   "\t-   action: Action to trigger",
+   "\t-   text: Item text",
    "\t\thref: HREF to trigger (optional)",
-   "\t\ttext: Item text",
-   "\ttitle: My title"
+   "\t\taction: Action to trigger",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Share items": {
@@ -466,11 +665,15 @@
    "\\$util.share",
    "options:",
    "\titems:",
-   "\t-   data: Raw data / image only",
-   "\t\tfile_url: Video url / video only",
+   "\t-   type: text | image | video",
    "\t\ttext: Text to share / text only",
-   "\t\ttype: text | image | video",
-   "\t\turl: Image url / image only"
+   "\t\tdata: Raw data / image only",
+   "\t\turl: Image url / image only",
+   "\t\tfile_url: Video url / video only",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Open a toast": {
@@ -481,7 +684,11 @@
    "\\$util.toast",
    "options:",
    "\ttext: My text",
-   "\ttype: error | info | warning | dark | default | success (default)"
+   "\ttype: error | info | warning | dark | default | success (default)",
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  },
  "Scan QR code": {
@@ -490,7 +697,10 @@
   ],
   "body": [
    "\\$vision.scan",
-   "{}"
+   "success:",
+   "\ttype: $",
+   "error:",
+   "\ttype: $"
   ]
  }
 }

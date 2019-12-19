@@ -100,6 +100,24 @@
                 }
             }
         }],
+        "$log.debug": [{
+            "api_description": "Log debug",
+            "options": {
+                "text": "{{$root}}"
+            }
+        }],
+        "$log.error": [{
+            "api_description": "Log error",
+            "options": {
+                "text": "{{$root}}"
+            }
+        }],
+        "$log.info": [{
+            "api_description": "Log info",
+            "options": {
+                "text": "{{$root}}"
+            }
+        }],
         "$media.camera": [{
             "api_description": "Capture photo or video",
             "options": {
