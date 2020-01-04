@@ -327,5 +327,23 @@
         "$vision.scan": [{
             "api_description": "Scan QR code"
         }]
+    },
+    "components": {
+        "label": [{
+            "api_description": "Simple label with action",
+            "text": "TEXT",
+            "action": {
+                "type": "ACTION_TYPE"
+            }
+        }, {
+            "api_description": "Simple label with href",
+            "text": "TEXT",
+            "href": {
+                "url": "http:// | file://",
+                "options": {
+                    "key": "value"
+                }
+            }
+        }]
     }
 }
