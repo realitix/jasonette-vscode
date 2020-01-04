@@ -702,5 +702,51 @@
    "error:",
    "\ttype: $"
   ]
+ },
+ "Simple label with action": {
+  "prefix": [
+   "label"
+  ],
+  "body": [
+   "label",
+   "text: TEXT",
+   "action:",
+   "\ttype: ACTION_TYPE"
+  ]
+ },
+ "Simple label with href": {
+  "prefix": [
+   "label"
+  ],
+  "body": [
+   "label",
+   "text: TEXT",
+   "href:",
+   "\turl: http:// | file://",
+   "\toptions:",
+   "\t\tkey: value"
+  ]
+ },
+ "Simple label with all available parameters": {
+  "prefix": [
+   "label"
+  ],
+  "body": [
+   "label",
+   "text: TEXT",
+   "href:",
+   "\turl: http:// | file://",
+   "\toptions:",
+   "\t\tkey: value",
+   "action:",
+   "\ttype: ACTION_TYPE | Only if no href",
+   "style:",
+   "\tfont: Font name",
+   "\tsize: '30'",
+   "\tcolor: rgb(200,0,0)",
+   "\tbackground: rgb(200,0,0)",
+   "\tpadding: '10'",
+   "\tcorner_radius: '10'"
+  ]
  }
 }

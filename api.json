@@ -344,6 +344,26 @@
                     "key": "value"
                 }
             }
+        }, {
+            "api_description": "Simple label with all available parameters",
+            "text": "TEXT",
+            "href": {
+                "url": "http:// | file://",
+                "options": {
+                    "key": "value"
+                }
+            },
+            "action": {
+                "type": "ACTION_TYPE | Only if no href"
+            },
+            "style": {
+                "font": "Font name",
+                "size": "30",
+                "color": "rgb(200,0,0)",
+                "background": "rgb(200,0,0)",
+                "padding": "10",
+                "corner_radius": "10"
+            }
         }]
     }
 }
